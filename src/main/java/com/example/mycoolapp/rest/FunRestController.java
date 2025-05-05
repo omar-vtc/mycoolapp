@@ -10,4 +10,10 @@ public class FunRestController {
     public String sayHello() {
         return "Hello World!";
     }
+
+    //expose new endpoint "workout"
+    @GetMapping("/workout")
+    public String getDailyWorkout() {
+        return "Daily workout";
+    }
 }
