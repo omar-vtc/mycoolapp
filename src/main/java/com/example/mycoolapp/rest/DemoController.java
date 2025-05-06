@@ -11,10 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController {
     //define private field for the dependencies
     private Coach myCoach;
-
     //define constructor for dependency injection
     @Autowired
-   public DemoController(@Qualifier("trackCoach") Coach theCoach) {
+   public DemoController(
+           @Qualifier("cricketCoach") Coach theCoach) {
+        System.out.println("In DemoController: " + getClass().getSimpleName());
         myCoach = theCoach;
     }
 
@@ -22,4 +23,6 @@ public class DemoController {
     public String getDailyWorkout() {
         return myCoach.getDailyWorkout();
     }
+
+
 }
